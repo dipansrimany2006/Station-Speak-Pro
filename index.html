@@ -12,6 +12,24 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+        #view_port{display: flex;flex-direction: column;justify-content: space-evenly; padding:10px;font-size: x-large;height: 400px;}
+        #view_port>span{display: flex;flex-direction: row;align-items: center;}
+        #view_port>i{transform: rotate(90deg);height: 15;width: 15;align-self: center;}
+        #view_port>i:hover{transform: rotate(-90deg);animation: rotation 0.5s ease;}
+        @keyframes rotation{
+            0%{transform: rotate(90deg);}
+            25%{transform: rotate(45deg);}
+            50%{transform: rotate(0deg);}
+            75%{transform: rotate(-45deg);}
+            100%{transform: rotate(-90deg);}
+        }
+        input{background-color: transparent;border: none;width: 90%;padding:10px;height: 30px;border: 1px solid rgba(255,255,255,0.4);color: white;}
+        #view_port>input{width: 100%;}
+        #view_port input::placeholder{color: lightgrey;font-size: large;}
+        #view_port>button{height: 30px;}
+        #view_port *{margin: 5px;}
+    </style>
   </head>
   <body>
     <nav>
@@ -28,16 +46,32 @@
     <div class="grad"></div>
     <h1 class="webname">Station Speak Pro</h1>
     <div class="chatgpt">
-      <h2>Need Help?</h2>
-      <div class="suggestions">
-        <button class="suggestion1">XYZ</button>
-        <button class="suggestion2">ABC</button>
-        <button class="suggestion3">PNQ</button>
-        <button class="suggestion4">OMG</button>
+      <div id="view_port">
+          <h2>Need Help?</h2>
+          <div class="suggestions">
+            <button class="suggestion1 boxes" onload="appear()" onclick="scripting(1)">What is the exact location of my train?
+            </button>
+            <button class="suggestion2 boxes" onclick="scripting(2)">From which platform will my train depart?</button>
+            <button class="suggestion3 boxes" onclick="scripting(3)">At what time will my train arrive?</button>
+            <button class="suggestion4 boxes" onclick="scripting(4)">By how much time my train is delayed?</button>
+          </div>
       </div>
       <!-- <textarea class="question" id="" cols="10" rows="10" placeholder="Write Your question here!"></textarea> -->
-      <input class="question" type="question" placeholder="Write Your Question Here">
+      <input class="question" type="text" placeholder="Write Your Question Here" list="possible_question">
+      <datalist id="possible_question">
+        <option value=" /location of train ">
+          <option value=" /train shedule ">
+          <option value=" /route distruction ">
+          <option value=" /departure from station ">
+          <option value=" /tickets ">
+          <option value=" /fare from a to b ">
+          <option value=" /policy for ticket cancellation and refunds ">
+          <option value=" /alternate routes ">
+          <option value=" /customer service ">          
+      </datalist>
       <a class="microphone"href=""><i class="fa-solid fa-microphone"></i></a>
     </div>
+    <footer></footer>
+    <script src="script.js"></script>
   </body>
 </html>
