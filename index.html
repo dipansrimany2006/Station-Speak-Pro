@@ -13,31 +13,85 @@
       referrerpolicy="no-referrer"
     />
     <style>
-        #view_port{display: flex;flex-direction: column;justify-content: space-evenly; padding:10px;font-size: x-large;height: 400px;}
-        #view_port>span{display: flex;flex-direction: row;align-items: center;}
-        #view_port>i{transform: rotate(90deg);height: 15;width: 15;align-self: center;}
-        #view_port>i:hover{transform: rotate(-90deg);animation: rotation 0.5s ease;}
-        @keyframes rotation{
-            0%{transform: rotate(90deg);}
-            25%{transform: rotate(45deg);}
-            50%{transform: rotate(0deg);}
-            75%{transform: rotate(-45deg);}
-            100%{transform: rotate(-90deg);}
+      #view_port {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px;
+        font-size: x-large;
+        height: 400px;
+      }
+      #view_port > span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      #view_port > i {
+        transform: rotate(90deg);
+        height: 15;
+        width: 15;
+        align-self: center;
+      }
+      #view_port > i:hover {
+        transform: rotate(-90deg);
+        animation: rotation 0.5s ease;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(90deg);
         }
-        input{background-color: transparent;border: none;width: 90%;padding:10px;height: 30px;border: 1px solid rgba(255,255,255,0.4);color: white;}
-        #view_port>input{width: 100%;}
-        #view_port input::placeholder{color: lightgrey;font-size: large;}
-        #view_port>button{height: 30px;}
-        #view_port *{margin: 5px;}
+        25% {
+          transform: rotate(45deg);
+        }
+        50% {
+          transform: rotate(0deg);
+        }
+        75% {
+          transform: rotate(-45deg);
+        }
+        100% {
+          transform: rotate(-90deg);
+        }
+      }
+      input {
+        background-color: transparent;
+        border: none;
+        width: 90%;
+        padding: 10px;
+        height: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: white;
+      }
+      #view_port > input {
+        width: 100%;
+      }
+      #view_port input::placeholder {
+        color: lightgrey;
+        font-size: large;
+      }
+      #view_port > button {
+        height: 30px;
+      }
+      #view_port * {
+        margin: 5px;
+      }
     </style>
   </head>
   <body>
     <nav>
-     <ul>
-        <li class="nav_link home active"><abbr title="Home"><i class="fa-solid fa-house"></i></abbr></li>
-        <li class="nav_link train_details"><abbr title="Train"><i class="fa-solid fa-train-subway"></i></abbr></li>
-        <li class="nav_link my_account"><abbr title="User"><i class="fa-solid fa-user"></i></abbr></li>
-        <li class="nav_link settings"><abbr title="Settings"><i class="fa-solid fa-gear"></i></abbr></li>
+      <ul>
+        <li class="nav_link home active">
+          <abbr title="Home"><i class="fa-solid fa-house"></i></abbr>
+        </li>
+        <li class="nav_link train_details">
+          <abbr title="Train"><i class="fa-solid fa-train-subway"></i></abbr>
+        </li>
+        <li class="nav_link my_account">
+          <abbr title="User"><i class="fa-solid fa-user"></i></abbr>
+        </li>
+        <li class="nav_link settings">
+          <abbr title="Settings"><i class="fa-solid fa-gear"></i></abbr>
+        </li>
         <li class="nav_link notification">
           <abbr title="notification"><i class="fa-solid fa-bell"></i></abbr>
         </li>
@@ -46,61 +100,96 @@
     <div class="grad"></div>
     <h1 class="webname">Station Speak Pro</h1>
     <h2 class="maptitle">See where you are:</h2>
-    <iframe src="https://www.google.co.in/maps?q=howrah+railway+station/@22.6779287,88.3434035,12.21z?entry=ttu&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width=300 height=150 allowfullscreen id="map" class="box1"></iframe>
+    <iframe
+      src="https://www.google.co.in/maps?q=howrah+railway+station/@22.6779287,88.3434035,12.21z?entry=ttu&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+      width="300"
+      height="150"
+      allowfullscreen
+      id="map"
+      class="box1"
+    ></iframe>
+    <input id="locationsearch" type="text" placeholder="Serach Your Station Here">
     <div class="chatgpt">
       <div id="view_port">
-          <h2>Need Help?</h2>
-          <div class="suggestions">
-            <button class="suggestion1 boxes" onload="appear()" onclick="scripting(1)">What is the exact location of my train?
-            </button>
-            <button class="suggestion2 boxes" onclick="scripting(2)">From which platform will my train depart?</button>
-            <button class="suggestion3 boxes" onclick="scripting(3)">At what time will my train arrive?</button>
-            <button class="suggestion4 boxes" onclick="scripting(4)">By how much time my train is delayed?</button>
-          </div>
+        <h2>Need Help?</h2>
+        <div class="suggestions">
+          <button
+            class="suggestion1 boxes"
+            onload="appear()"
+            onclick="scripting(1)"
+          >
+            What is the exact location of my train?
+          </button>
+          <button class="suggestion2 boxes" onclick="scripting(2)">
+            From which platform will my train depart?
+          </button>
+          <button class="suggestion3 boxes" onclick="scripting(3)">
+            At what time will my train arrive?
+          </button>
+          <button class="suggestion4 boxes" onclick="scripting(4)">
+            By how much time my train is delayed?
+          </button>
+          <button class="suggestion5 boxes" onclick="scripting(5)">
+            What is the present PNR status of my train?
+          </button>
+          <button class="suggestion6 boxes" onclick="scripting(6)">
+            How shall I book online tickets?
+          </button>
+        </div>
       </div>
       <!-- <textarea class="question" id="" cols="10" rows="10" placeholder="Write Your question here!"></textarea> -->
-      <input class="question" type="text" placeholder="Write Your Question Here" list="possible_question">
+      <input
+        class="question"
+        type="text"
+        placeholder="Type / to open command templates"
+        list="possible_question"
+      />
       <datalist id="possible_question">
-        <option value=" /location of train ">
-          <option value=" /train shedule ">
-          <option value=" /route distruction ">
-          <option value=" /departure from station ">
-          <option value=" /tickets ">
-          <option value=" /fare from a to b ">
-          <option value=" /policy for ticket cancellation and refunds ">
-          <option value=" /alternate routes ">
-          <option value=" /customer service ">          
+        <option value=" /location of train "></option>
+        <option value=" /train shedule "></option>
+        <option value=" /route distruction "></option>
+        <option value=" /departure from station "></option>
+        <option value=" /tickets "></option>
+        <option value=" /fare from a to b "></option>
+        <option value=" /policy for ticket cancellation and refunds "></option>
+        <option value=" /alternate routes "></option>
+        <option value=" /customer service "></option>
       </datalist>
-      <a class="microphone"href=""><i class="fa-solid fa-microphone"></i></a>
+
+      <a class="microphone" href=""><i class="fa-solid fa-microphone"></i></a>
     </div>
-    <script>const advices=[
-      "Arrive at the station well in advance to ensure a smooth boarding process.",
-      "Check the train schedule and platform information before departure.",
-      "Secure your belongings and keep valuables with you during the journey.",
-      "Consider bringing snacks and water for a comfortable journey.",
-      "Keep your ticket and identification easily accessible for ticket checks.",
-      "Be aware of the amenities available on the train, such as dining services or Wi-Fi.",
-      "Follow safety guidelines and emergency procedures provided by the railway authorities.",
-      "Respect the quiet zones if available on the train for a peaceful environment.",
-      "Engage in conversations with fellow travelers and make new connections.",
-      "Charge your electronic devices before the journey and carry a portable charger if needed.",
-      "Be mindful of other passengers and maintain a clean and tidy seating area.",
-      "Take breaks to stretch your legs during longer journeys for better comfort.",
-      "Check for any travel updates or delays through official railway channels.",
-      "Book tickets in advance to secure preferred seats or accommodations.",
-      "Familiarize yourself with the layout of the train and the location of restrooms.",
-      "Consider bringing entertainment such as books, music, or movies for the journey.",
-      "If traveling with children, pack necessary items to keep them entertained and comfortable.",
-      "Be courteous to train staff and fellow passengers for a positive travel experience.",
-      "Keep an eye on station and onboard announcements for important information.",
-      "Stay hydrated, especially during longer journeys, by carrying a water bottle.",
-      "Utilize travel apps to track your journey, find nearby amenities, and get real-time updates.",
-      "Have a backup plan in case of unexpected changes in travel arrangements.",
-      "Enjoy the scenic views along the journey and take pictures to capture the memories.",
-      "Check the weather at your destination and pack accordingly for any climate changes."
-    ];
-    const advice_box=document.getElementsByClassName("maptitle")[0];
-    setInterval(function () {advice_box.innerHTML=advices[Math.floor(Math.random()*advices.length)]}, 3000);
+    <script>
+      const advices = [
+        "Arrive at the station well in advance to ensure a smooth boarding process.",
+        "Check the train schedule and platform information before departure.",
+        "Secure your belongings and keep valuables with you during the journey.",
+        "Consider bringing snacks and water for a comfortable journey.",
+        "Keep your ticket and identification easily accessible for ticket checks.",
+        "Be aware of the amenities available on the train, such as dining services or Wi-Fi.",
+        "Follow safety guidelines and emergency procedures provided by the railway authorities.",
+        "Respect the quiet zones if available on the train for a peaceful environment.",
+        "Engage in conversations with fellow travelers and make new connections.",
+        "Charge your electronic devices before the journey and carry a portable charger if needed.",
+        "Be mindful of other passengers and maintain a clean and tidy seating area.",
+        "Take breaks to stretch your legs during longer journeys for better comfort.",
+        "Check for any travel updates or delays through official railway channels.",
+        "Book tickets in advance to secure preferred seats or accommodations.",
+        "Familiarize yourself with the layout of the train and the location of restrooms.",
+        "Consider bringing entertainment such as books, music, or movies for the journey.",
+        "If traveling with children, pack necessary items to keep them entertained and comfortable.",
+        "Be courteous to train staff and fellow passengers for a positive travel experience.",
+        "Keep an eye on station and onboard announcements for important information.",
+        "Stay hydrated, especially during longer journeys, by carrying a water bottle.",
+        "Utilize travel apps to track your journey, find nearby amenities, and get real-time updates.",
+        "Have a backup plan in case of unexpected changes in travel arrangements.",
+        "Enjoy the scenic views along the journey and take pictures to capture the memories.",
+        "Check the weather at your destination and pack accordingly for any climate changes.",
+      ];
+      const advice_box = document.getElementsByClassName("maptitle")[0];
+      setInterval(function () {
+        advice_box.innerHTML =
+          advices[Math.floor(Math.random() * advices.length)];
+      }, 3000);
     </script>
     <script src="script.js"></script>
   </body>
