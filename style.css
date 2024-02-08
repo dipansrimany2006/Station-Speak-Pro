@@ -135,6 +135,14 @@ li:hover {
   border: 2px solid white;
   position: absolute;
   top: 60vh;
-  left: 4vw;
+  left: 35vw;
   border-radius: 50px;
+}
+#locationsearch{
+  position: absolute;
+  z-index: 1;
+  top: 60vh;
+  left: 6vw;
+  width: 200px;
+  height: 30px;
 }
