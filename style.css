@@ -155,6 +155,11 @@ li:hover {
   left: 9vw;
   width: 200px;
   height: 30px; 
+  border: 2px solid white;
+  color: white;
+}
+#locationsearchform::placeholder{
+  color: white;
 }
 #label1{
 position: absolute;
@@ -171,6 +176,11 @@ position: absolute;
   color: white; 
   width: 200px;
   height: 30px; 
+  border: 2px solid white;
+  color: white;
+}
+#locationsearchto::placeholder{
+  color: white;
 }
 #label2{
   position: absolute;
