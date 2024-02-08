@@ -45,6 +45,8 @@
     </nav>
     <div class="grad"></div>
     <h1 class="webname">Station Speak Pro</h1>
+    <h2 class="maptitle">See where you are:</h2>
+    <div class="box1"></div>
     <div class="chatgpt">
       <div id="view_port">
           <h2>Need Help?</h2>
@@ -71,7 +73,35 @@
       </datalist>
       <a class="microphone"href=""><i class="fa-solid fa-microphone"></i></a>
     </div>
-    <footer></footer>
+    <script>const advices=[
+      "Arrive at the station well in advance to ensure a smooth boarding process.",
+      "Check the train schedule and platform information before departure.",
+      "Secure your belongings and keep valuables with you during the journey.",
+      "Consider bringing snacks and water for a comfortable journey.",
+      "Keep your ticket and identification easily accessible for ticket checks.",
+      "Be aware of the amenities available on the train, such as dining services or Wi-Fi.",
+      "Follow safety guidelines and emergency procedures provided by the railway authorities.",
+      "Respect the quiet zones if available on the train for a peaceful environment.",
+      "Engage in conversations with fellow travelers and make new connections.",
+      "Charge your electronic devices before the journey and carry a portable charger if needed.",
+      "Be mindful of other passengers and maintain a clean and tidy seating area.",
+      "Take breaks to stretch your legs during longer journeys for better comfort.",
+      "Check for any travel updates or delays through official railway channels.",
+      "Book tickets in advance to secure preferred seats or accommodations.",
+      "Familiarize yourself with the layout of the train and the location of restrooms.",
+      "Consider bringing entertainment such as books, music, or movies for the journey.",
+      "If traveling with children, pack necessary items to keep them entertained and comfortable.",
+      "Be courteous to train staff and fellow passengers for a positive travel experience.",
+      "Keep an eye on station and onboard announcements for important information.",
+      "Stay hydrated, especially during longer journeys, by carrying a water bottle.",
+      "Utilize travel apps to track your journey, find nearby amenities, and get real-time updates.",
+      "Have a backup plan in case of unexpected changes in travel arrangements.",
+      "Enjoy the scenic views along the journey and take pictures to capture the memories.",
+      "Check the weather at your destination and pack accordingly for any climate changes."
+    ];
+    const advice_box=document.getElementsByClassName("maptitle")[0];
+    setInterval(function () {advice_box.innerHTML=advices[Math.floor(Math.random()*advices.length)]}, 3000);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
