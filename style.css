@@ -145,17 +145,28 @@ li:hover {
   border: 2px solid white;
   position: absolute;
   top: 59vh;
-  left: 30vw;
+  left: 35vw;
   border-radius: 50px;
+}
+.locationsearch{
+  background-color: rgba(255, 255, 255, 0.177);
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 59vh;
+  left: 5vw;
+  border-radius:50px;
+  border: 2px solid white;
 }
 #locationsearchform{
   position: absolute;
   z-index: 1;
-  top: 60vh;
-  left: 9vw;
-  width: 200px;
-  height: 30px; 
+  top: 76.5vh;
+  left: 10vw;
+  width: 300px;
+  height: 40px; 
   border: 2px solid white;
+  border-radius: 50px;
   color: white;
 }
 #locationsearchform::placeholder{
@@ -164,19 +175,20 @@ li:hover {
 #label1{
 position: absolute;
   z-index: 1;
-  top: 60vh;
-  left: 6vw;
+  top: 65.5vh;
+  left: 7vw;
   color: white;
 }
 #locationsearchto{
   position: absolute;
   z-index: 1;
-  top: 66vh;
-  left: 9vw;
+  top: 64.5vh;
+  left: 10vw;
   color: white; 
-  width: 200px;
-  height: 30px; 
+  width: 300px;
+  height: 40px; 
   border: 2px solid white;
+  border-radius: 50px;
   color: white;
 }
 #locationsearchto::placeholder{
@@ -185,7 +197,7 @@ position: absolute;
 #label2{
   position: absolute;
     z-index: 1;
-    top: 66vh;
-    left: 6vw;
+    top: 77.5vh;
+    left:7vw;
     color: white;
   }
